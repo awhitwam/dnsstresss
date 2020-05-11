@@ -94,7 +94,7 @@ func main() {
 	for threadID := 0; threadID < concurrency; threadID++ {
 		go linearResolver(threadID, targetDomains[threadID%len(targetDomains)], sentCounterCh)
 	}
-	fmt.Print(aurora.Gray(12,fmt.Sprintf("Started %d threads.\n", concurrency)))
+	fmt.Print(aurora.Gray(15,fmt.Sprintf("Started %d threads.\n", concurrency)))
 
 	if !flood {
 		go timerStats(sentCounterCh)
